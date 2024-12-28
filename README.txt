@@ -3,6 +3,7 @@
   https://github.com/kcamenzind/BluespecIntroGuide/blob/master/BluespecIntroGuide.md
 
 - 进阶:
+  https://github.com/oxidecomputer/quartz/tree/main/hdl/ip/bsv
   https://github.com/csail-csg/recycle-bsv-lib
   github 代码搜索 path:*.bsv
 
@@ -81,6 +82,8 @@
     - method ret_type name if (xxx);
   - 方法简写: 可继承方法及其隐式条件
     - method name = instance.name;
+  - 空接口: Empty
+    - 无接口的 module 本质上继承自空接口
 
 - 函数 function
     function Bit#(6) test(Bit#(6) value)
