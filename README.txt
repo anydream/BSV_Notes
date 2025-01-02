@@ -155,11 +155,16 @@
   - execution_order: 重排规则的执行顺序
     - 默认执行顺序是规则的编写顺序, 该属性可重新指定顺序
     - 对 shadows the effects of 的情况有用
-  - fire_when_enabled: 断言规则的显式和隐式条件为真时, 必须被执行
+  - fire_when_enabled: 断言规则的显式和隐式条件为真时可被执行, 而不会被其他规则阻止
     - (* fire_when_enabled *)
   - no_implicit_conditions: 断言规则内如果存在隐式条件, 则都为真
     - (* no_implicit_conditions *)
 
+- G0036: Rule X will appear to fire before Y when both fire in the same clock cycle
+- G0010: Rule X was treated as more urgent than Y
+  - 警告 X 和 Y 可能在同一周期执行
+  - 可能存在某些条件语句的分支路径导致 X 和 Y 没有互斥
+  - 添加显式条件/隐式条件/preempts, 把 X 和 Y 完全互斥
 
 - 元属性
   - synthesize: 综合成 Verilog 模块
